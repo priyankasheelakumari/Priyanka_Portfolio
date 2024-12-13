@@ -1,4 +1,16 @@
-
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+   }
 body{
-    background-color:#ffab40;
+    background-color:#9575cd;
+    background-image:"url('solid-bg.webp')";
+    background-repeat: "no-repeat";
+    backdrop-filter: 'blur(5px)';
+}
+.pro-image{
+    border-radius: "50%";
+    width:'200px';
+    height:'100px',
 }
