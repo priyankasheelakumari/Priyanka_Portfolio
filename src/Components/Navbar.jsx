@@ -2,14 +2,17 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import NavLinks from "./NavLinks";
 
 export default function NavBar() {
   return (
-    <Box sx={{ }}>
-      <AppBar position="static" sx={{ bgcolor: " rgba(0, 0, 0, 0.3)" }}>
+    <Box sx={{}}>
+      <AppBar
+        position="fixed"
+        sx={{ bgcolor: " rgba(0, 0, 0, 0.3)", justifyContent: "flex-end" }}
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -18,11 +21,9 @@ export default function NavBar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ color: "white" }} />
           </IconButton>
-          <Button color="#ede7f6">Home</Button>
-          <Button color="#ede7f6">About</Button>
-          <Button color="#ede7f6">Contact</Button>
+          <NavLinks  sx={{color:"white",bgcolor:"red",justifyContent:"flex-end"}}/>
         </Toolbar>
       </AppBar>
     </Box>

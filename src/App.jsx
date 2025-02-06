@@ -3,11 +3,16 @@ import CompaniesBtn from "./Components/CompaniesBtn";
 import Intro from "./Components/Intro";
 import { DETAILS } from "./Components/companyAcheivements";
 import Box from "@mui/material/Box";
-import { Container, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import NavBar from "./Components/Navbar";
+import Tabs from "./Components/Tabs";
 import profileimage from "./assets/pro1.jpg";
 import { SkillsIcons } from "./Components/SkillsIcons";
 import "./Components/App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Components/HomePage.jsx";
+import About from "./Components/AboutPage.jsx";
+import Contact from "./Components/ContactPage.jsx";
 
 function App() {
   const [selectedCompany, setselectedCompany] = useState("Vosyn");
@@ -17,7 +22,15 @@ function App() {
 
   return (
     <Box sx={{ color: "#eceff1", height: "100%" }}>
-      <NavBar />
+      <Box>
+        <NavBar />
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Box>
+
       <Box sx={{ display: "flex" }}>
         <img className="pro-image" src={profileimage} />
         <Intro />
@@ -60,9 +73,33 @@ function App() {
             >
               {DETAILS[selectedCompany].acheivements}
             </Typography>
+            <Box
+              sx={{
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                gap: 10,
+              }}
+            >
+              {DETAILS[selectedCompany].stack.map((tech, index) => (
+                <Button
+                  key={index}
+                  variant={"contained"}
+                  sx={{
+                    color: "Black",
+                    bgcolor: "inherit",
+                    boxShadow: "0 0 10px rgb(250, 241, 250)",
+                    mt: 2,
+                  }}
+                >
+                  {tech}
+                </Button>
+              ))}
+            </Box>
           </Box>
         )}
       </Container>
+      <Tabs />
       <SkillsIcons />
     </Box>
   );
