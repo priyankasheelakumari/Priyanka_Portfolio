@@ -1,16 +1,18 @@
 import { useState } from 'react';
+import Box from "@mui/material/Box";
+import { Button, Container, TextField, Typography } from "@mui/material";
+import Input from '@mui/material/Input';
+
+
+const ariaLabel = { 'aria-label': 'description' };
 
 export default function Contact() {
   const [enteredEmail, setEnteredEmail] = useState('');
-  const [enteredPassword, setEnteredPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  function handleInputChange(identifier, value) {
-    if (identifier === 'email') {
+  function handleInputChange(value) {
       setEnteredEmail(value);
-    } else {
-      setEnteredPassword(value);
-    }
+   
   }
 
   function handleLogin() {
@@ -18,41 +20,49 @@ export default function Contact() {
   }
 
   const emailNotValid = submitted && !enteredEmail.includes('@');
-  const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
   return (
     
-    <div id="auth-inputs">
-      <header>
-      <h1>Login</h1>
-      <p>Login to your account</p>
-      </header>
-      <div className="controls">
-        <p>
-          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</label>
-          <input
-            type="email"
-            className={emailNotValid ? 'invalid' : undefined}
-            onChange={(event) => handleInputChange('email', event.target.value)}
-          />
-        </p>
-        <p>
-          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Password</label>
-          <input
-            type="password"
-            className={passwordNotValid ? 'invalid' : undefined}
-            onChange={(event) =>
-              handleInputChange('password', event.target.value)
-            }
-          />
-        </p>
-      </div>
-      <div className="actions">
-        <button type="button" className="text-button">
-          Create a new account
-        </button>
-        <button className='button' onClick={handleLogin}>Sign In</button>
-      </div>
-    </div>
+    <Container  sx={{maxWidth: { xs: "90%", md: "50%" }, px: { xs: 4, md: 10 },py: { xs: 6, md: 10 }}}>
+       <Typography variant="h3" sx={{ mb: 2 }}>Let's get into work</Typography>
+       <Typography variant="h4">Drop me a Line</Typography>
+      <Box
+       component="form"
+       sx={{ '& > :not(style)': { m: 1, width: '25ch' ,display:'flex'} }}
+       noValidate
+       autoComplete="off"
+       >
+
+              
+              <Input 
+                className={`label ${emailNotValid ? 'invalid' : ''}`}
+                variant="standard"
+                onChange={(event) => handleInputChange('name', event.target.value)}
+                placeholder="Your Name" inputProps={ariaLabel}
+                color="secondary" 
+                 />
+             
+             <Input 
+                className={`label ${emailNotValid ? 'invalid' : ''}`}
+                variant="standard"
+                onChange={(event) => handleInputChange('email', event.target.value)}
+                placeholder="Email address" inputProps={ariaLabel}
+                color="secondary" 
+                 />
+                 
+              <TextField
+                className={`label ${emailNotValid ? 'invalid' : ''}`}
+                variant="filled"
+                onChange={(event) => handleInputChange('message', event.target.value)}
+                placeholder=" Message" inputProps={ariaLabel}
+                color="secondary" 
+                 />
+               <Button onClick={handleLogin} variant='contained' sx={{bgcolor:"#d500f9"}}>Submit</Button>
+
+      </Box>
+     
+        
+      
+    </Container>
   );
 }
