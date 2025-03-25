@@ -17,13 +17,16 @@ export default function NavBar() {
           <IconButton
             size="large"
             edge="start"
-            color="#212121"
+            
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2,color:"#212121"}}
+
           >
-            <MenuIcon sx={{ color: "white" }} />
+          <MenuIcon sx={{ color: "white" }} />
           </IconButton>
-          <NavLinks  sx={{color:"white",bgcolor:"red",justifyContent:"flex-end"}}/>
+          <Box>
+          <NavLinks  />
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

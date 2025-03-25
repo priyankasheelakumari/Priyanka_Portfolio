@@ -7,10 +7,10 @@ import HtmlIcon from '@mui/icons-material/Html';
 
 export const SkillsIcons = () => {
   return (
-    <Box>
-        <JavascriptIcon  fontSize='medium' sx={{p:0 ,border:'5px solid black'}}/>
-        <CssIcon fontSize='medium' sx={{p:0,border:'5px solid black'}}/>
-        <HtmlIcon fontSize='medium' sx={{p:0,border:'5px solid black'}}/>
+    <Box sx={{display:"flex", gap:"2vh",alignItems:"center",justifyContent:"center",mt:10}}>
+        <JavascriptIcon sx={{border:'2px solid black',fontSize:"10vh"}}/>
+        <CssIcon  sx={{border:'2px solid black',fontSize:"10vh"}}/>
+        <HtmlIcon  sx={{border:'2px solid black',fontSize:"10vh"}}/>
     </Box>
   )
 }

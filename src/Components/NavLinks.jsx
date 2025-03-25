@@ -9,10 +9,11 @@ const navLinks = [
 ];
 
 const NavLinks = () => (
-  <Box>
+  <Box sx={{display:"flex",alignItems:"center",gap:15}}>
     {navLinks.map((link) => {
       return (
-        <NavLink key={link.name} to={link.href}>
+        <NavLink key={link.name} to={link.href}
+        style={{color:"white",textDecoration:"none"}}>
           {link.name}
         </NavLink>
       );
