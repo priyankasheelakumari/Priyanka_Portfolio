@@ -1,34 +1,34 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import NavLinks from "./NavLinks";
+import { AppBar, Toolbar, Button } from "@mui/material";
 
-export default function NavBar() {
+const NavBar = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Box sx={{}}>
-      <AppBar
-        position="fixed"
-        sx={{ bgcolor: " rgba(0, 0, 0, 0.3)", justifyContent: "flex-end" }}
-      >
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            
-            aria-label="menu"
-            sx={{ mr: 2,color:"#212121"}}
-
-          >
-          <MenuIcon sx={{ color: "white" }} />
-          </IconButton>
-          <Box>
-          <NavLinks  />
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar position="sticky" sx={{ bgcolor: " rgba(0, 0, 0, 0.3)", justifyContent: "flex-end" }}>
+      <Toolbar>
+      <Button color="inherit" onClick={() => scrollToSection("home")}>
+          Home
+        </Button>
+        <Button color="inherit" onClick={() => scrollToSection("about")}>
+          About
+        </Button>
+        <Button color="inherit" onClick={() => scrollToSection("companies")}>
+          Companies
+        </Button>
+        <Button color="inherit" onClick={() => scrollToSection("projects")}>
+          Projects
+        </Button>
+        <Button color="inherit" onClick={() => scrollToSection("contact")}>
+          Contact
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
-}
+};
+
+export default NavBar;

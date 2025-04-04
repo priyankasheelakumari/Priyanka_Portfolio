@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import JavascriptIcon from '@mui/icons-material/Javascript';
 import CssIcon from '@mui/icons-material/Css';
-import HtmlIcon from '@mui/icons-material/Html';
+import HtmlIcon from '@mui/icons-material/Html';src/assets/agency.jpg
 
 
 const Skills = () => {

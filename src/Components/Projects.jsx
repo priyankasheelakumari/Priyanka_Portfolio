@@ -1,35 +1,42 @@
+import { Box } from '@mui/material';
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import athiAgency from '../assets/agency.jpg'
+import onlineFood from '../assets/onlinefoodorder.jpg'
+import driving from '../assets/driving.jpg'
+
+
+
 
 
 export default function Projects() {
-  const [value, setValue] = React.useState('1');
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  
 
   return (
-    <Box sx={{ width: '100%', typography: 'body1' }}>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Project 1" value="1" />
-            <Tab label="Project 2" value="2" />
-            <Tab label="Project 3" value="3" />
-          </TabList>
-        </Box>
-        {/*
-        </TabContext>
-        <TabPanel value="1"><Project1 /></TabPanel> 
-        <TabPanel value="2"><Project2 /></TabPanel>
-        <TabPanel value="3"><Project3 /></TabPanel>
-        */}
-      </TabContext>
+    <Box sx={{ color: "#eceff1", height: "100dvh", overflow: "hidden",alignItems: "center",justifyContent: "center",py:"15rem",gap:"2vh" ,display: "flex"}}>
+      <img
+                className="pro-image"
+                src={athiAgency}
+                alt="Profile"
+                style={{ width: "20%", height: "60%", borderRadius: "5%" }}
+              />
+              
+      <img
+                className="pro-image"
+                src={onlineFood}
+                alt="Profile"
+                style={{ width: "20%", height: "auto", borderRadius: "5%" }}
+              />
+      <img
+                className="pro-image"
+                src={driving}
+                alt="Profile"
+                style={{ width: "20%", height: "60%", borderRadius: "5%" }}
+              />
+
+      { /**<h1>Athi Agency E-commerce site</h1>
+      <h1>Online food ordering</h1>
+      <h1>Driving school</h1> **/}
     </Box>
+    
   );
 }

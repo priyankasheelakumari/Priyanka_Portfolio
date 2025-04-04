@@ -5,7 +5,7 @@ import CV from "../assets/cv.pdf";
 import profileimage from "../assets/pro1.jpg";
 import linkedIn from "../assets/linkedin.svg";
 import github from "../assets/github.svg";
-import twitter from "../assets/twitter.svg"
+import twitter from "../assets/twitter.svg";
 import { ReactTyped } from "react-typed";
 const About = () => {
   return (
@@ -19,6 +19,7 @@ const About = () => {
         textAlign: { xs: "center", md: "left" }, // Center text on mobile
         px: { xs: 4, md: 10 }, // Responsive padding
         py: { xs: 6, md: 10 },
+        height:"100dvh"
       }}
     >
       <Box
@@ -51,7 +52,16 @@ const About = () => {
             loop
           />
         </Typography>
-        <Box sx={{display:"flex",gap:4, justifyContent:"center", alignItems:"center",flexWrap:"wrap",mt:2}}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 4,
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            mt: 2,
+          }}
+        >
           <Link
             href="https://github.com/priyankasheelakumari"
             underline="none"
@@ -93,7 +103,7 @@ const About = () => {
               color: "white",
               bgcolor: "#d500f9",
               boxShadow: " 0 0 10px rgb(182, 154, 182) ",
-              my:"2rem"
+              my: "2rem",
             }}
           >
             Resume

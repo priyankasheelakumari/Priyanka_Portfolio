@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import { Box } from "@mui/material";
 
 const navLinks = [
-  { name: "Home", href:"/home" },
+  { name: "Home", href:"/" },
   { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
 

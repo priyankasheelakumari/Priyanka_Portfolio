@@ -23,12 +23,12 @@ export default function Contact() {
 
   return (
     
-    <Container  sx={{maxWidth: { xs: "90%", md: "50%" }, px: { xs: 4, md: 10 },py: { xs: 6, md: 10 }}}>
+    <Container  sx={{maxWidth: { xs: "90%", md: "50%" }, px: { xs: 4, md: 10 },py: { xs: 6, md: 10 }, height: "100dvh", overflow: "hidden",alignItems: "center",justifyContent: "center",padding:"2rem"}}>
        <Typography variant="h3" sx={{ mb: 2 }}>Let's get into work</Typography>
        <Typography variant="h4">Drop me a Line</Typography>
       <Box
        component="form"
-       sx={{ '& > :not(style)': { m: 1, width: '25ch' ,display:'flex'} }}
+       sx={{ '& > :not(style)': { m: 1, width: '25ch' ,display:'flex',padding:"0.8rem"} }}
        noValidate
        autoComplete="off"
        >
